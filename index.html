@@ -73,11 +73,11 @@
             <div class="section">
               <h2 class="text-xl">1. Basic Setup</h2>
               <p>Install <code>react-router-dom</code>:</p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>npm install react-router-dom</code></pre>
               </div>
               <p>Wrap your app in <code>&lt;BrowserRouter&gt;</code>:</p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               import { BrowserRouter as Router, Route, Routes } from &#39;react-router-dom&#39;;
               
@@ -99,7 +99,7 @@
             <div class="section">
               <h2 class="text-xl">2. Navigation</h2>
               <!-- <p>Define routes with <code>&lt;Routes&gt;</code> and <code>&lt;Route&gt;</code>:</p>
-                  <div class="mockup-code">
+                  <div class="language-javascript">
                     <pre><code>
               import { Routes, Route } from &#39;react-router-dom&#39;;
               
@@ -116,7 +116,7 @@
               <p>Navigate between routes using <code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code>.
                 The latter provides transition properties e.g. "active" / "pending". <a class="link"
                   href="https://reactrouter.com/en/main/components/nav-link">(More on NavLink)</a></p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               import { Link } from &#39;react-router-dom&#39;;
               
@@ -137,7 +137,7 @@
               <h2 class="text-xl">3. Dynamic Routes</h2>
               <p>Segments of the URL can be dynamic placeholders. React router tries to match the URL with the specified
                 placeholder in the Route</p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               import { Routes, Route, useParams } from &#39;react-router-dom&#39;;
               
@@ -161,7 +161,7 @@
             <div class="section">
               <h2 class="text-xl">4. Nested Routes and Outlet</h2>
               <p>Outlet is used to render the child route elements of the parent route element</p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               import { Routes, Route, Outlet } from &#39;react-router-dom&#39;;
               
@@ -197,7 +197,7 @@
                 The <code>ProtectedRoute</code> component renders the protected component if the user is authenticated, or
                 redirects them to the login page if not.
               </p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               // Authentication service (dummy)
               const isAuthenticated = () =&gt; {
@@ -229,7 +229,7 @@
             <div class="section">
               <h2 class="text-xl">6. Navigation</h2>
               <p>The <code>useNavigate</code> hook returns a function that lets you navigate programmatically:</p>
-              <div class="mockup-code">
+              <div class="language-javascript">
                 <pre><code>
               import { useNavigate } from &#39;react-router-dom&#39;;
               
