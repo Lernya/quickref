@@ -103,6 +103,19 @@
           <span class="text-red-500">e.target.value</span>.
         </p>
         <hr class="solid" />
+        <!-- about handling of form submition -->
+        <p class="text-lg">
+          Handling form submission involves preventing the default form behavior
+          and processing the form data.
+        </p>
+        <pre
+          class="bg-black text-white rounded"
+        ><code class="language-javascript">
+        const handleSubmit = (e) => {
+          e.preventDefault();
+        };
+        </code></pre>
+        <hr class="solid" />
         <!-- about validation -->
         <p class="text-lg">
           This validation function checks the validity of formData.email and
