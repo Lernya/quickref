@@ -4,12 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script>
     <link rel="stylesheet" href="src/quickref-classic.css" />
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
     <script>
       tailwind.config = {
-        plugins: [daisyui],
+        theme: {
+          extend: {
+            colors: {
+              'farbe-lila': '#5F259F', // Beispiel benutzerdefinierte Farbe
+            },
+          },
+          plugins: [daisyui],
+        },
       };
     </script>
+    <style>
+      /* Hier kann unsere TailwindCSS-Konfiguration hin. (Auch die obige tailwind.config laesst sich (fast) wie gewohnt ausbauen) */
+    </style>
     <title>Quickref</title>
   </head>
   <body>
