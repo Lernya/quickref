@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="garden">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com">   </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script>
     <link rel="stylesheet" href="src/quickref-classic.css" />
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
     <script>
-        tailwind.config = {
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'farbe-lila': '#5F259F', // Beispiel benutzerdefinierte Farbe
+            },
+          },
           plugins: [daisyui],
-        };
-      </script>
+        },
+      };
+    </script>
+    <style>
+      /* Hier kann unsere TailwindCSS-Konfiguration hin. (Auch die obige tailwind.config laesst sich (fast) wie gewohnt ausbauen) */
+    </style>
     <title>Quickref</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-
-        </nav>
+      <nav></nav>
     </header>
 
     <main class="mt-8 p-4">
-        <h1 class="text-4xl font-extrabold" >Quickref</h1>
+      <h1 class="text-4xl font-extrabold">Quickref</h1>
     </main>
-
-</body>
+  </body>
 </html>
