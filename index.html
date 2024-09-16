@@ -6,8 +6,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script>
     <link rel="stylesheet" href="src/quickref-classic.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+
     <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
       mermaid.initialize({ startOnLoad: true });
     </script>
     <script>
@@ -15,7 +19,7 @@
         theme: {
           extend: {
             colors: {
-              'farbe-lila': '#5F259F', // Beispiel benutzerdefinierte Farbe
+              "farbe-lila": "#5F259F", // Beispiel benutzerdefinierte Farbe
             },
           },
           plugins: [daisyui],
@@ -40,6 +44,83 @@
 
     <main class="mt-8 p-4">
       <!-- <h1 class="text-4xl font-extrabold">Quickref</h1> -->
+
+      <!-- form section -->
+      <section class="flex flex-col gap-4 px-8 md:px-16 lg:px-32 max-w-6xl">
+        <h2 class="text-2xl font-bold">Forms in React</h2>
+        <p class="text-lg">
+          In React, mutable state is typically kept in the state property of
+          components, and only updated with setState().
+        </p>
+        <pre class="bg-black text-white rounded"><code class="language-javascript">
+        const [formData, setFormData] = useState({
+          email: "",
+          password: "",
+        });
+        </code></pre>
+
+        <p class="text-lg">
+          Since the value attribute is set on our form element, the displayed
+          value will always be this.state.value, making the React state the
+          source of truth. Since handleChange runs on every keystroke to update
+          the React state, the displayed value will update as the user types.
+        </p>
+
+        <pre class="bg-black text-white rounded"><code class="language-javascript">
+        const handleChange = (e) => {
+          const { name, value } = e.target;
+          setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+          }));
+        };
+        </code></pre>
+
+        <p class="text-lg">
+          The whole expression
+          <span class="text-red-500"
+            >{ ...prev, [e.target.name]: e.target.value }</span
+          >
+          returns a new object. This new object has all the properties of
+          <span class="text-red-500">prev</span> but with the key matching
+          <span class="text-red-500">e.target.name</span> updated to
+          <span class="text-red-500">e.target.value</span>.
+        </p>
+
+        <p class="text-lg">
+          This validation function checks the validity of formData.email and
+          formData.password against predefined regular expressions, it ensures
+          that the email format and password length meet specific criteria. If
+          any of these criteria are not met, the function updates the error
+          state using setErrors, marking the form as invalid. This process
+          allows real-time validation feedback, with the form only being
+          considered valid if all checks pass.
+        </p>
+        <pre class="bg-black text-white rounded"><code class="language-javascript">
+        const validate = () => {
+          let isValid = true;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const passRegex = /^.{8,}$/;
+
+          if (!emailRegex.test(formData.email)) {
+            setErrors((prev) => ({
+              ...prev,
+              emailError: "Invalid Email",
+            }));
+            isValid = false;
+          }
+
+          if (!passRegex.test(formData.password)) {
+            setErrors((prev) => ({
+              ...prev,
+              passError: "Password must be at least 8 characters.",
+            }));
+            isValid = false;
+          }
+          return isValid;
+        };
+        </code></pre>
+      </section>
     </main>
   </body>
 </html>
