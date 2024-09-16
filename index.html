@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="garden">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="src/quickref-classic.css" />
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -15,10 +16,13 @@
         theme: {
           extend: {
             colors: {
-              'farbe-lila': '#5F259F', // Beispiel benutzerdefinierte Farbe
+              'farbe-brand': '#F7F9FE', // Beispiel benutzerdefinierte Farbe
             },
           },
-          plugins: [daisyui],
+        },
+        plugins: [daisyui], // Plugins außerhalb des Theme-Blocks
+        daisyui: {
+          themes: ["garden"], // Theme-Auswahl
         },
       };
     </script>
@@ -37,20 +41,59 @@
     </header>
 
     <main class="mt-8 p-4">
-      <!-- <h1 class="text-4xl font-extrabold">Quickref</h1> -->
 
-      <section>
-      </section>
+        <section id="test">
+          <div class="overflow-x-auto">
+            <ul class="steps bg-blue-50">
+              <li class="step">start</li>
+              <li class="step step-secondary">2</li>
+              <li class="step step-accent">6</li>
+              <li class="step step-error">9</li>
+              <li class="step step-error">10</li>
+              <li class="step step-warning">14</li>
+              <li class="step">15</li>
+              <li class="step step-neutral">16</li>
+              <li class="step step-neutral">23</li>
+              <li class="step step-neutral">end</li>
+            </ul>
+          </div>
+  
+          <div class="diff aspect-[16/9]">
+            <div class="diff-item-1">
+              <div class="bg-primary text-primary-content grid place-content-center text-9xl font-black">
+                DAISY
+              </div>
+            </div>
+            <div class="diff-item-2">
+              <div class="bg-base-200 grid place-content-center text-9xl font-black">DAISY</div>
+            </div>
+            <div class="diff-resizer"></div>
+          </div>
+  
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Hello, DaisyUI!</h2>
+              <p>This is a card component from DaisyUI.</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+  
+          <button>Button</button>
 
-      <section>
-      </section>
-
-      <section>
-      </section>
-
-      <section>
-      </section>
-
-    </main>
+          <div class="m-8">
+            <div class="mermaid">
+              graph TD;
+                A-->B;
+                A-->C;
+                B-->D;
+                C-->D;
+            </div>
+          </div>
+          
+        </section>
+  
+      </main>
   </body>
 </html>
