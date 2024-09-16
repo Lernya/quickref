@@ -40,6 +40,112 @@
 
     <main class="mt-8 p-4">
       <!-- <h1 class="text-4xl font-extrabold">Quickref</h1> -->
+
+      <!--React install-->
+      <section class="flex flex-col gap-4 px-8 md:px-16 lg:px-32 max-w-6xl">
+        <p class="text-xl">
+          Um ein neues React-Projekt einzurichten, folgen Sie diesen Schritten:
+        </p>
+
+        <h1 class="text-2xl font-bold">
+          Schritt 1: Erstellen Sie ein neues React-Projekt mit Vite
+        </h1>
+        <p class="text-lg">
+          a.Öffnen Sie Ihr Terminal: Öffnen Sie Ihr Terminal oder die
+          Eingabeaufforderung.
+        </p>
+        <p class="text-lg">
+          b. Führen Sie den Befehl Vite Create aus: Verwenden Sie den folgenden
+          Befehl, um ein neues Vite-Projekt zu erstellen. Sie können
+          my-react-app durch Ihren Projektnamen ersetzen.
+        </p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          >npm create vite@latest
+        </p>
+        <p class="text-lg">c. Navigieren Sie zum Projektverzeichnis:</p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          >cd my-react-app
+        </p>
+
+        <h1 class="text-2xl font-bold p-2">Schritt 2: installieren</h1>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">>npm install</p>
+
+        <h1 class="text-2xl font-bold p-2 rounded">
+          Schritt 3: Tailwind CSS installieren
+        </h1>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          >npm install -D tailwindcss postcss autoprefixer <br />
+          >npx tailwindcss init -p
+        </p>
+
+        <h1 class="text-2xl font-bold">
+          Schritt 4: Konfigurieren Sie Tailwind-CSS
+        </h1>
+        <p class="text-lg">
+          a. Konfigurieren Sie tailwind.config.js: Öffnen Sie die Datei
+          tailwind.config.js und aktualisieren Sie das Inhaltsfeld, um Ihre
+          Vorlagendateien aufzunehmen. Es sollte wie folgt aussehen:
+        </p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          /** @type {import('tailwindcss').Config} */ <br />
+
+          module.exports = { <br />
+          content: [ "./index.html", "./src/**/*.{js,jsx,ts,tsx}", ], <br />
+          theme: { extend: {}, },<br />
+          plugins: [], }
+        </p>
+        <p class="text-lg">
+          b. Fügen Sie Tailwind-Direktiven zu Ihrem CSS hinzu: Öffnen Sie die
+          Datei src/index.css (oder erstellen Sie sie, falls sie nicht
+          existiert) und fügen Sie die folgenden Zeilen hinzu:
+        </p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          @tailwind base;<br />
+          @tailwind components;<br />
+          @tailwind utilities;
+        </p>
+
+        <h1 class="text-2xl font-bold">Schritt 5: Installieren Sie DaisyUI</h1>
+        <p class="text-lg">
+          DaisyUI ist eine Tailwind CSS-Komponentenbibliothek. Sie können sie
+          installieren, indem Sie ausführen:
+        </p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          >npm install daisyui
+        </p>
+
+        <h1 class="text-2xl font-bold">
+          Schritt 6: Konfigurieren Sie DaisyUI in Tailwind
+        </h1>
+        <p class="text-lg">
+          Um DaisyUI zu verwenden, müssen Sie es in die Datei tailwind.config.js
+          aufnehmen. Aktualisieren Sie den Abschnitt plugins:
+        </p>
+
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">
+          import daisyui from "daisyui" <br />
+          module.exports = { //... <br />
+          plugins: [ daisyui, ], }
+        </p>
+
+        <h1 class="text-2xl font-bold">
+          Schritt 7: Starten Sie Ihren Entwicklungsserver
+        </h1>
+        <p class="text-lg">
+          Nachdem nun alles eingerichtet ist, können Sie Ihren
+          Entwicklungsserver starten:
+        </p>
+        <!--in terminal-->
+        <p class="font-mono text-base bg-slate-300 p-2 rounded">>npm run dev</p>
+      </section>
     </main>
   </body>
 </html>
